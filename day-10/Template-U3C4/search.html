@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+    <div id="main">
+ 
+    </div>
+  </body>
+</html>
+<script type="module">
+  var search_term = JSON.parse(localStorage.getItem("search_term"))
+  if(search_term=="cricket"){
+    data()
+    async function data(){
+      try{
+        let res = await fetch("https://shrouded-earth-23381.herokuapp.com/api/search/?q=cricket")
+        let data = await res.json();
+        console.log(data)
+        append(data)
+      }
+      catch(err){
+        console.log(err)
+      }
+    }
+  }
+  else{
+    document.querySelector("#main").innerHTML="<h1>PLEASE GO BACK AND SEARCH CRICKET</h1>"
+  }
+  var append=(data)=>{
+   data.map(function(data){
+     var div = document.createElement("div")
+     div.setAttribute("id","news")
+     div.addEventListener("click",function(){
+       myfunction(data)
+     })
+     var content = document.createElement("h2")
+     content.innerHTML=data.description
+     var img = document.createElement("img")
+     img.src=data.urlToImage
+     div.append(img,content)
+     document.querySelector("#main").append(div)
+   })
+  }
+  var myfunction=(data)=>{
+    var article = data
+    localStorage.setItem("article",JSON.stringify(article))
+    window.location.href="news.html"
+  }
+  
+</script>

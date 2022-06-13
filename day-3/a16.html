@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+//array constructor     
+
+function myArray(){
+
+   Object.defineProperty(this, "length", {
+         writable: true,
+         enumerable: false,
+});
+
+   for(let i=0; i<arguments.length;i++){
+       
+       this[i]=arguments[i]
+
+       this.length= arguments.length
+       }
+}
+let a2 = new myArray("r","s","b")
+console.log(Object.values(a2))
+
+//arrray push
+myArray.prototype.chalja = function (x) {
+
+let index = this.length;
+this[index]=x;
+this.length++;
+};
+
+let a3 = new myArray("r","s","b")
+a3.chalja('total');
+
+console.log(Object.values(a3))
+
+//array reverse
+
+myArray.prototype.hello = function () {
+var arrr=[];
+    for(let i=this.length-1;i>=0;i--){
+       arrr.push(this[i]);
+       }
+   return arrr;
+};
+let a4 = new myArray("r","s","b")
+ console.log(a4.hello())
+
+
+//first element
+myArray.prototype.firstele = function () {
+
+   var first= this[0];
+
+    return first;
+};
+let a5 = new myArray("r","s","b")
+console.log(a5.firstele())
+</script>

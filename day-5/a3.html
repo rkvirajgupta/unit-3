@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id='name'>
+
+    <button onclick="register()">Register</button>
+    
+</body>
+</html>
+
+<script>
+
+let q=['pablo','raju','syam','babu'];
+
+function register(){
+
+    let name = document.querySelector("#name").value;
+
+    q.push(name);
+
+    let message = `${name} your registration is successfull added`;
+
+    alert(message);
+
+    let promise = new Promise(function (resolve,reject){
+
+     let x = setInterval(function (){
+
+        if(q[0]===name){
+            resolve(`${name} its your turn now`);
+        }   //we need to keep checking this condition again and again 
+            //if not understand watch video promises wala
+
+     },1000);
+
+    });
+    promise.then(function (res){
+
+     console.log(res);
+});
+}
+var id = setInterval(Vaccination,4000);
+
+function Vaccination(){
+    console.log(q)
+    
+    if(q.length==0){
+        clearInterval(id);
+    }
+    q.shift();
+    
+}
+
+
+</script>

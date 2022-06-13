@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width:200px;
+
+        }
+        #movies {
+            height:200px;
+            width:206px;
+            border: 1px solid black;
+            overflow:scroll;
+            
+        }
+    </style>
+</head>
+<body>
+                    <!-- main is function and 1000 time interval 1sec. -->
+    <input type="text" id="query" oninput="debounce(main,1000)">
+    <div id="movies"></div>
+</body>
+</html>
+<script>
+
+
+    async function searchMovie(){
+        try{
+
+let movie= document.getElementById("query").value;
+
+let res = await fetch(`http://www.omdbapi.com/?apikey=3bc6bab9&s=${movie}`);
+     
+      let data = await res.json();
+    //   console.log(data)
+      return data.Search;
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+ async   function main(){
+
+
+        let data = await searchMovie();
+        // console.log(data);
+        if(data==undefined){
+            return false;
+        }
+        console.log(data);
+        appendData(data);
+
+    }
+
+    function appendData(movies){
+        document.querySelector("#movies").innerHTML="";
+
+movies.forEach(function(el){
+
+    let p = document.createElement('p')
+    p.innerHTML=el.Title;
+     
+     document.querySelector("#movies").append(p);
+});
+
+ }
+
+ //debounce ?
+ //func -->> main
+
+ //"a"--> debounce()
+
+//we made it global why watch the clousers video if not understand
+let timerId;
+ function debounce(func, delay){
+      
+      if(timerId){
+          clearTimeout(timerId);
+      }
+       timerId = setTimeout(function(){
+         func();
+
+     },delay);
+ }
+
+ //"a"-->oninput-->debounce()-->main("a")-->setTimout(main,1000)
+  //"av"-->oninput-->debounce()-->main("av")-->setTimout(main,1000)
+ //"ave"-->oninput-->debounce()-->main("ave")-->setTimout(main,1000)
+
+
+</script>

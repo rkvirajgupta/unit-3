@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+	function Product(n, a) {
+	    let product={}
+	    product.name=n
+	    product.price = a
+	    return product
+	}
+	
+	var p1 = Product('xhoes','999')
+	var p2 = Product('shirt','1299')
+	
+	//we need a keyword that can replace OWNER object //what is that keyword?
+	
+	//create PRODUCTS using a normal function but using this keyword
+	
+	function Product(n,a){
+	    this.name=n
+	    this.price=a
+	}
+	
+	var product1 = new Product('FOOTBALL','799')
+</script>

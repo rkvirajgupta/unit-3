@@ -1,0 +1,20 @@
+ <script>
+
+
+
+
+function multiplication(a,b){
+	console.log(a*b);
+	}
+	
+	var multiby2 = multiplication.bind(this,2);
+	
+	//Now multiby2(b) is equal to multiplication(2,b);
+	
+	multiby2(3); //6
+	multiby2(4); //8
+
+
+
+
+ </script>

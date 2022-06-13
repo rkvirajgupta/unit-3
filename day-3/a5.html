@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+var a = {
+
+
+name:'rooney',
+}
+
+var b = Object.create(a)
+
+b.age= 21;
+
+//everything in js is obj exp
+
+// console.log(b.__proto__.__proto__)
+console.log(b.__proto__.__proto__.__proto__)
+
+function a(){
+
+    return true
+}
+
+// console.log(a.__proto__)
+// console.log(a.__proto__.__proto__)
+// console.log(a.__proto__.__proto__.__proto__)
+
+
+
+// you can made your own feature
+
+var arr= [1,2,3];
+
+Array.prototype.myPrint = function(){
+    console.log('adding my own proto feature in array');
+}
+arr.myPrint();
+
+//OR
+
+var arr= [1,2,3];
+
+Array.prototype.myPrint = function(z){
+    console.log(z);
+}
+arr.myPrint("hi i am a new feature in new way");
+
+</script>

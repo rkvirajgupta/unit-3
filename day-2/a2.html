@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//normal function
+    function NikeProduct(){
+        
+        let obj = {
+
+         name:'shoes',
+         price:"2000",
+         type:"sneaker"
+        }
+        return obj
+    }
+
+    let p1 = NikeProduct()
+     console.log(p1);
+
+//constructor function
+
+function NikeProductcf(){
+        
+       
+
+         this.name='shoes'
+         this.price="2000"
+         
+}
+    let p2 =new NikeProductcf()
+    console.log(p2);
+
+
+function student(S,m){
+    this.name=S
+    this.marks=m
+}
+
+
+let s1=new student("rohit",90)
+console.log(s1);
+
+let s2=new student("rahul")
+console.log(s2);
+
+//newspaper example
+
+function News(h){
+this.date= new Date()
+this.id= Math.round(Math.random()*10)
+this.name="Pablo Publications"
+this.headline=h
+
+
+}
+
+let n1= new News("Pablo bought mars");
+let n2= new News("Pablo got married");
+
+console.log(n1);
+console.log(n2);
+
+for (let i=0;i<10;i++){
+
+    let g= new News("Pablo bought mars");
+    // console.log(g);
+
+}
+// NEW is work like return and this work like ??
+</script>

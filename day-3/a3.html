@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+function person(n,a){
+
+    this.name=n;
+    this.age=a;
+}
+
+var per  = new person('raj',23)
+
+console.log(per)
+// console.log(typeof(per))
+
+/////////////////////
+
+function son(n,a){
+
+this.name=n;
+this.age=a
+}
+
+son.prototype.city = 'pune';
+
+
+
+
+var perr  = new son('raj',23)
+
+console.log(perr)
+
+console.log(perr.city)
+//the proto is acceble
+/////////////////
+
+
+function persons(n,a){
+
+this.name=n;
+this.age=a
+}
+
+persons.prototype.city = function(c){
+
+    this.city=c
+}
+//adding feature(function like split,join,sort type) in persons function
+//when we call it city will added in obj.
+
+
+var personer  = new persons('raj',23)
+
+console.log(personer)
+var personer  = new persons('raj',23)
+
+personer.city('indore')
+
+console.log(personer)
+
+//////////////////
+
+function persons1(n,a){
+
+this.name=n;
+this.age=a;
+
+this.city = function(c){
+
+this.city=c
+}
+
+}
+
+
+var personer1  = new persons1('raj',23)
+
+// console.log(personer1)
+
+personer1.city('jaipur')
+
+// console.log(personer1)
+
+</script>

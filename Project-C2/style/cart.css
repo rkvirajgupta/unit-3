@@ -1,0 +1,49 @@
+#navbar{
+    height:50px;
+    width:100%;
+    border:1px solid red;
+    display:flex;
+    background-color: red;;
+
+    
+  }
+  #a1{
+    width:70%;
+    /* border:1px solid red; */
+    height:50px;
+  }
+  #rhs{
+    width:20%;
+    display:flex;
+    justify-content: space-evenly;
+  }
+  #count{
+    /* border:1px solid red; */
+    width:9%;
+
+  }
+  #cart{
+    margin-top: 50px;;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:2px;
+    
+
+    /* grid-template-rows: repeat(4,1fr); */
+  }
+  #poster{
+    width:50%;
+  }
+  #count{
+    padding:15px;
+    color:white;
+  }
+  #pp{
+    color:white;
+  }
+  #remove{
+    border:0px;
+    color:white;
+    background-color: red;
+    border-radius: 5px;;
+  }

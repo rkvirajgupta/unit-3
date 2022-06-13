@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+
+ <script>
+var grandfather = {
+     
+     skincolor:"white",
+     height:"6 feet",
+     
+}
+
+var father= Object.create(grandfather);
+console.log(father)
+
+father.haircolor="black";
+
+var myself=Object.create(father);
+
+console.log(myself);
+
+
+console.log(myself.skincolor);
+
+console.log(myself.haircolor);
+
+
+ </script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+    
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="sidebar">
+
+       
+      </div>
+
+      <div id="main">
+
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  var data = {}
+  import sidebar from "./components/sidebar.js"
+  document.querySelector("#sidebar").innerHTML=sidebar()
+async function topstories(){
+  try{
+let res = await fetch("https://shrouded-earth-23381.herokuapp.com/api/headlines/india")
+let data = await res.json();
+console.log(data)
+append(data)
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+  topstories();
+  var append=(data)=>{
+   data.map(function(data){
+     var div = document.createElement("div")
+     div.setAttribute("id","news")
+     div.addEventListener("click",function(){
+       myfunction(data)
+     })
+     var content = document.createElement("h2")
+     content.innerHTML=data.description
+     var img = document.createElement("img")
+     img.src=data.urlToImage
+     div.append(img,content)
+     document.querySelector("#main").append(div)
+   })
+  }
+
+
+   var myfunction=(data)=>{
+    console.log(data)
+    localStorage.setItem("article",JSON.stringify(data))
+    window.location.href="news.html"
+  }
+  document.querySelector("#searchbar").addEventListener("keypress",(e)=>{
+    var search_term = document.querySelector("#searchbar").value
+    if(e.key=="Enter" && search_term=="cricket"){
+     var search_term = "cricket"
+     localStorage.setItem("search_term",JSON.stringify(search_term))
+     window.location.href="search.html"
+   }
+   else if(e.key=="Enter" && search_term!="cricket"){
+     var search_term = search_term;
+     localStorage.setItem("search_term",JSON.stringify(search_term))
+     window.location.href="search.html"
+   }
+   
+  })
+  
+  
+  
+
+</script>
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+const cat = {
+    legs:4,
+    tail:true,
+    claws:"sharp",
+    moustache:true
+}
+
+// const tiger = {
+
+//     legs:4,
+//     tail:true,
+//     claws:"sharp",
+//     moustache:true,
+//     speed:60,
+//     color:"orange"
+// }
+
+//instead of this we can inherited the properties of cat
+// because they have coommon properties.
+//inhertance means to say dna which we got by our parents
+ 
+ const Tiger = Object.create(cat);
+
+ //now i can access all properties of cat in tiger like
+ console.log(Tiger ); 
+
+ console.log(Tiger.legs ); //inherted value/data of cat
+
+ Tiger.speed = 60
+
+ console.log(Tiger ); //actual content of Tiger
+
+ const fish = {
+     name:"nemo",
+     talk:true
+ }
+
+ const monkey= Object.create(fish)
+
+ const humans= Object.create(monkey)
+
+ console.log(humans)
+ console.log(humans.name)
+
+ ///but if human have name propertie than he will not go
+ // go to the inherited properties if the propertie is 
+ // exists in humans like exmpale
+
+ humans.name= 'babban bhai'
+
+ console.log(humans.name)
+
+ //owner  finder 
+
+ console.log(humans.hasOwnProperty('talk'));
+//false because it is  not its propertie
+ console.log(humans.hasOwnProperty('name'));
+ // true because it is its properite
+
+
+
+ function newspaper(h){
+
+    this.date = new Date();
+    this.id= Math.round(Math.random()*10);
+    this.name= "pblo pandey publication";
+    this.headline=h;
+
+    // this.ad = function () {
+
+    //     console.log("flipkart big billion slae")
+    // }
+
+    //this is add not part of news and we can write it 
+    //in more better way to make our obj clean 
+ }
+ newspaper.prototype.ad = function () {
+
+     console.log("flipkart big billion slae")
+ }
+
+// n1.ad(); //here it get error think why? you know it before execution , intialisation
+
+let n1= new newspaper("khusi is good");
+console.log(n1);
+n1.ad();
+
+newspaper.prototype.magzine = "jai ho maharaj"
+
+
+let n2= new newspaper("khusi is good");
+console.log(n2.magzine);
+
+</script>

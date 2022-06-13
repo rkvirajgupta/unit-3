@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+let a1 = new Array ("1","2","3") 
+console.log(a1);
+
+function myArray(){
+
+    for(let i = 0 ;i<arguments.length;i++){
+        
+       
+        this[i] = arguments[i];
+       
+        //here this refers to create an obj like in obj
+        //see this you will got everthing
+                                                    //  function son(n,a){
+
+                                                    //             this.name=n;
+                                                    //             this.age=a
+                                                    //             }
+                                                    //   var perr  = new son('raj',23)
+                                                    //    console.log(perr)
+                        
+             //ust refer this one
+        this.length = arguments.length
+    }
+}
+let a2  = new myArray("Raju","Shyam","Babubhiaya")
+
+console.log(a2);
+
+//but this comes in obj not in array so what we do 
+
+
+console.log(Object.values(a2));
+
+//but here we got one problem see the console
+//so we write one propertie here
+//////////////////////////////////////////////
+function mzArray(){
+
+    //this propertie
+
+    Object.defineProperty(this,"length",{  //here this refers to mzArray when this function
+        writable:true,                   //work some properties on (line 64) length decides behalf on this
+        enumerable:false //google it loop will not work on it
+                         //that why it is 
+    })
+for(let i = 0 ;i<arguments.length;i++){
+    
+    this[i] = arguments[i];
+    this.length = arguments.length
+}
+}
+let a3  = new mzArray("Raju","Shyam","Babubhiaya")
+
+console.log(a3);
+console.log(Object.values(a3));
+//perfect in arry
+
+
+
+</script>

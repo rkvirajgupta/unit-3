@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+var person = {
+    name: 'johon',
+}
+
+var person2 = {
+    name: 'hon',
+}
+
+function myname() {
+
+    console.log(this.name)
+}
+
+myname.call(person)
+
+
+function my(m) {
+
+this.age=m
+}
+
+
+
+my.call(person,21)
+
+console.log(person)
+
+</script>

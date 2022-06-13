@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+const kitchen = {
+
+name: 'kitchen',
+purpose: 'coook',
+order: 'thali',
+
+cookfood() {
+
+    console.log(`serving ${this.order} `)
+}
+}
+
+// kitchen.cookfood();
+
+
+
+const livingroom ={
+
+name:"living room",
+purpose: "chill",
+order:' maggie'
+}
+
+//before - this is work as a kitchen
+
+let x =kitchen.cookfood.bind(livingroom)
+
+//after - this is work as a livingroom
+
+
+x();
+
+</script>

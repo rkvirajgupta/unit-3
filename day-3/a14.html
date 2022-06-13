@@ -1,0 +1,17 @@
+myArray.prototype.rev = function (arr) {
+    let s = 0;
+    let e = this.length ;
+    while (s < e) {
+      swap(this[s], this[e]);
+      s++;
+      e--;
+    }
+    
+     return Object.values(arr).reverse();
+  };
+  function swap(i, j) {
+    let temp = i;
+    i = j;
+    j = temp;
+     return i,j;
+  }

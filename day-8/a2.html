@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+let colors1 = ['red','yellow','blue'];  //adding elemetns by usring ... way
+
+let colors2= [...colors1,'voilet','orange','green'];
+
+console.log(colors2)
+
+//spread operator  merging
+
+const user1 = {
+
+    name:'swanand'
+}
+
+const user2 = {
+
+    city: 'Pune'
+}
+
+
+const details = {...user1,...user2}
+
+console.log(details)
+
+const user = {
+name:'swanand',
+city:'Pune',
+age:25,
+role:'developer'
+
+}
+
+const { ...x}=user  //creating new obj using ...rest operator
+
+//if you want to remove any key than do this way
+
+const{name,...rest}= user
+
+console.log(x);
+console.log(rest);
+
+
+function printArray(...a){
+
+    console.log(a);
+
+    let sum=0;
+    for ( let num of a ){
+        sum+=num
+    }
+    console.log(sum)
+}
+
+printArray(10,20,30)
+</script>

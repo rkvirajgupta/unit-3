@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+console.log(this)
+
+// function test(){
+//     console.log(this);
+// }
+
+// test();
+
+const person = {
+
+    name:"pablo",
+
+    test:function(){
+        console.log(this);
+    }
+}
+person.test();
+////////////////////////
+const son = {
+
+name:"pablo",
+
+tt:function(){
+    console.log("hello");
+}
+}
+son.tt();
+
+// see the differenece in tt and test in test
+// when we put this in console it represent global obj
+// and in tt we just say hello he just print hello 
+// so this represent parant obj. in test.
+//this is flexible, value of this changes
+//this will always point to an object
+</script>

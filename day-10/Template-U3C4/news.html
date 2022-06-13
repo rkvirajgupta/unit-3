@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+  
+
+    <div id="container">
+      <div id="sidebar">
+
+      </div>
+
+      <div id="main">
+
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import sidebar from "./components/sidebar.js"
+  document.querySelector("#sidebar").innerHTML=sidebar()
+  
+  var article = JSON.parse(localStorage.getItem("article"))
+  if(article!=0){
+  var div = document.createElement("div")
+     div.setAttribute("id","news")
+     var content = document.createElement("h2")
+     content.innerHTML=article.description
+     var img = document.createElement("img")
+     img.src=article.urlToImage
+     var title = document.createElement("p")
+     title.innerHTML=article.content
+     var published = document.createElement("h1")
+     published.innerHTML=` PUBLISHED AT ${article.publishedAt}`
+     var source = document.createElement("p")
+     source.innerHTML=`source name =  ${article.source.name}`
+     div.append(title,img,content,published,source)
+     document.querySelector("#main").append(div)
+    }
+
+    document.querySelector("#searchbar").addEventListener("keypress",(e)=>{
+    var search_term = document.querySelector("#searchbar").value
+    if(e.key=="Enter" && search_term=="cricket"){
+     var search_term = "cricket"
+     localStorage.setItem("search_term",JSON.stringify(search_term))
+     window.location.href="search.html"
+   }
+   else if(e.key=="Enter" && search_term!="cricket"){
+     var search_term = search_term;
+     localStorage.setItem("search_term",JSON.stringify(search_term))
+     window.location.href="search.html"
+   }
+   
+  })
+</script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        img{
+            width:30%;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="reviews"></div>
+</body>
+</html>
+
+
+
+<script>
+
+//1. API - Road
+//2. fetch -Roadtrip
+//3. url - location  //fackapi.com
+
+// let url = 'https://fakestoreapi.com/products';
+
+
+// let myRequest = fetch(url);
+
+// // console.log(myRequest);
+
+// myRequest
+// .then(function(res){
+//     // console.log(res)
+//      return res.json();
+    
+// })
+// .then(function(res){
+// console.log(res);
+        
+// })
+// .catch(function(err){
+//     console.log(err)
+// })
+////////////////////OR????????//////////////
+let url = 'https://fakestoreapi.com/products';
+
+async function getData(){
+
+   try{
+    let res= await fetch(url);
+
+      let data = await res.json();
+ 
+      appendData(data); 
+    //  console.log(data);
+
+   }
+   catch(err) {
+       console.log(err);
+   }
+}
+
+getData();
+
+
+function appendData(data){
+    console.log(data);
+    data.forEach(function(el){
+
+        let div = document.createElement('div');
+
+        let img = document.createElement('img');
+        img.src = el.image;
+
+        let title = document.createElement('p');
+        title.innerHTML=el.title;
+
+        let price = document.createElement('p');
+        price.innerText=el.price;
+
+        div.append(img,title,price);
+
+    document.querySelector('#container').append(div);
+
+
+        // console.log(el)
+    });
+}
+</script>

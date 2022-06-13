@@ -1,0 +1,47 @@
+#navbar{
+    width:90%;
+    display: flex;
+    justify-content: end;
+    /* border:1px solid red; */
+    margin:auto;
+    border-radius:15px;
+    background-color: teal;
+    height: 60px;
+   
+}
+#RHS{
+    /* border:1px solid red; */
+     display: flex;
+     justify-content: space-around;
+     width:20%;
+     color:white;
+}
+#login-form-div{
+    width:30%;
+    margin:auto;
+    text-align: center;
+    margin-top: 5%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+#email,#pwd{
+    width: 60%;
+    padding: 2%;
+    margin: 3%;
+
+ }
+ #submit{
+     padding: 2%;
+     width: 35%;
+     margin: 6%;
+     margin-bottom: 15%;
+     color: white;
+     background-color: black;
+     border: 0;
+     border-radius: 6px;
+     font-size: 100%;
+     }
+h1{
+padding-top: 5%;
+
+}
+

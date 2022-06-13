@@ -1,0 +1,39 @@
+<script>
+
+    	
+	function Newspaper(h){
+	
+	    this.date=new Date()
+	    this.id=Math.random()*10
+	    this.name='TOI'
+	
+	    this.headline=h
+	
+	 }
+	
+	var n1=new Newspaper("India wins world cup")
+	
+	
+	
+	
+	//CF will allow you to add a property using .prototype.
+	
+	Newspaper.prototype.advertisment = function (ad)
+	
+	{
+	
+	console.log(ad)
+	
+	}
+	
+	
+	
+	
+	//can be invoked like this
+	
+	
+	
+	
+	n1.advertisement("buy shoes")
+
+</script>

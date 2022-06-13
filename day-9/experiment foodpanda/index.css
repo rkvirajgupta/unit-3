@@ -1,0 +1,133 @@
+body{
+    background-color: #F8F6F2;
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#mainLogo{
+    width: 97%;
+    margin: auto;
+    margin-top: 24px;
+    text-align: center;
+}
+#mainLogo>img{
+    width: 17%;
+    height: 62px;
+}
+#searchBar{
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    width: 38%;
+    height: 56px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#searchBar>form>button{
+    background-color: #FF9933;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 24px;
+    border-radius: 10px;
+    text-decoration: rgb(255, 255, 255);
+    border: 0px;
+    margin-right: 3px;
+    cursor: pointer;
+    
+}
+#searchBar>form>input{
+    font-size: 16px;
+    padding: 10px 140px 10px 12px;
+    font-weight: 400;
+    color: hsl(0, 2%, 11%);
+    text-decoration: rgb(74, 74, 74);
+    border: 0px;
+}
+#popularHead{
+    color: rgb(96, 96, 96); 
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: rgb(96, 96, 96);
+    text-transform: uppercase;
+    width: 38%;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+#trend{
+    width: 38%;
+    margin: auto;
+    margin-top: 20px;
+    color: rgb(118, 182, 239);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.175px;
+    
+}
+#trend>span{
+    margin-right: 5px;
+    cursor: pointer;
+    
+}
+#resultBox{
+    width: 38%;
+    position:absolute;
+    overflow: scroll;
+    margin-left: 420px;
+    
+
+}
+#recipeOfDay{
+    color: rgb(74, 74, 74);
+    font-size: 20px;
+    line-height: 32px;
+    text-decoration: rgb(74, 74, 74);
+    font-weight: 500;
+    margin: 15px 0px 8px;
+    text-align: center;
+}
+#card{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 28%;
+    margin-left: 36%;
+}
+#cardDiv{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#cardimg{
+    width: 100%;
+    height: 250px;
+}
+#mealName{
+    color: rgb(74, 74, 74);
+    font-size: 20px;
+    line-height: 32px;
+    text-decoration: rgb(74, 74, 74);
+    font-weight: 500;
+    margin: 15px 0px 8px;
+    text-align: center;
+}
+#tags{
+    color: rgb(118, 182, 239);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+#searchDivs{
+    
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    gap: 20px;
+}

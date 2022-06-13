@@ -1,0 +1,136 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+    <script>
+
+// function test(){
+//     console.log("hello world")
+// }
+
+// let test = function (){
+
+//     conosle.log("hello world")  //new way of writtening the function
+// }
+
+// let test = () => {
+
+//     console.log("hello world")
+// }
+
+
+// let arr = [1,2,3,4];
+
+// arr.forEach((data)=> {    //new functionlity  of js 
+
+//     console.log(data);
+// })
+
+// let array = [1,2,3,4,5];
+
+// for(let x of array ){
+
+//     console.log(x)
+// }
+
+// let str = 'masai';
+
+// for ( let x of str ){
+
+//     console.log(x)
+// }
+
+
+// const user = {
+
+// name: 'raj',
+// age: 24,
+// city:'Pune'
+
+// }
+
+
+// // let name = user.name 
+
+// // let age  = user.age 
+
+// //new way of writtening this things  
+// //destructuring
+
+
+// let {name,city} = user
+
+// console.log(name,city);
+
+
+// /////////////////////////////
+
+// fetch('https://reqres.in/api/users/2')
+// .then((res) =>{
+
+// return res.json().then ((res)=>{
+
+// let data = res.data;
+
+
+// // let name = data.first_name
+// // let email  = data.email
+
+// console.log(data);
+
+// let { first_name,email} = data
+// console.log(first_name,email)
+
+
+// })
+
+
+// })
+
+
+const user = {
+
+name: 'raj',  //key = name
+age: 24,
+city:'Pune'
+
+}
+
+//for changing an name of key or want to change variable name
+
+let {name:anything,city}= user
+
+console.log(anything,city)
+
+const user = {
+
+name: 'raj',  //key = name
+age: 24,
+city:'Pune'
+
+}
+
+function printuser(u){
+
+    console.log(u.name,u.age,u.city)
+}
+
+printuser(user)
+
+//OR//
+function printuser({name,age,city}){
+
+console.log(name,age,city)
+}
+
+printuser(user)
+
+    </script>
