@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  arr.splice(2, 1, "drum");
+  console.log(arr);
+  // comment::>> we can clearly see that by using splice the arr value is changed.hence using
+  //splice function it is mutable .
+
+  var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  arr1.slice(2, 7);
+  // console.log(arr1);
+  console.log(arr1.slice(2, 7));
+  //comment::>> here we can clearly see that it returns new array. Not  modify the original array .
+  //hence usning slice function it is not mutable(immutable) .
+
+  var admin = {
+    name: "rk",
+    age: 25,
+  };
+
+  Object.freeze(admin);
+
+  admin.name="kk"; //changing the value
+  console.log(admin);
+
+  //comment::>> Object.freeze is immutable .after changing the  value
+  // of the original admin is not changed.Mean to say Object.freeze freezed
+  // the values of admin.
+
+  const players =['Ronaldo','messi','Neymar'] //asigning
+
+//   players=['rk']; //reasigning
+players[0]="viraj";    //changing the value but chaanges the value so 
+                        //const is mutable.
+  console.log(players)
+    // const ::>> freezes reassignments 
+  // and using both the things like const and Object.freeze you can freezed
+  // both reasigning and changing the value as well.
+</script>

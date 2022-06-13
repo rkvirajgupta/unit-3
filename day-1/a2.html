@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Throw Dice</title>
+</head>
+<body>
+        <button onclick="throw_dice()">Throw Dice</button>
+        <h2></h2>
+ 
+</body>
+</html>
+
+<script>
+
+    function throw_dice(){
+        
+        var no = Math.ceil(Math.random() * 6)
+        var h2 = document.querySelector("h2")
+        h2.textContent = no
+        
+       if(no == 1){
+
+           document.querySelector("h2").style.color = "yellow"
+       }
+       else if(no == 6){
+
+        document.querySelector("h2").style.color = "green"
+       }
+       else{
+
+        document.querySelector("h2").style.color = "red"
+       }
+
+       
+    }
+</script>
